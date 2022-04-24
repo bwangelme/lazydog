@@ -1,5 +1,6 @@
-package org.bwangel;
+package org.bwangel.ch1;
 
+import org.bwangel.ch1.App;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
