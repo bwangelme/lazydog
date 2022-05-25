@@ -2,7 +2,6 @@ package org.bwangel.ch1_2;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
