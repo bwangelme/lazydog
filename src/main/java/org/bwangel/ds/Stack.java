@@ -36,8 +36,12 @@ public class Stack<Item> {
             throw new EmptyStackException();
         }
 
-        Item val = first.item;
+        Node oldFirst = first;
         first = first.next;
+
+        Item val = oldFirst.item;
+        oldFirst.next = null;
+
 
         N--;
         return val;
