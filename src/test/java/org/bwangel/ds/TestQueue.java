@@ -4,9 +4,31 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import java.nio.file.FileAlreadyExistsException;
-
 public class TestQueue {
+    @Test
+    public void test_queue_iter() {
+        Queue<String> q = new Queue<>();
+
+        q.Enqueue("to");
+        q.Enqueue("be");
+        q.Enqueue("or");
+        q.Enqueue("not");
+        q.Enqueue("to");
+
+        // 期待的输出如下
+        // to
+        // be
+        // or
+        // not
+        // to
+        for (String s : q) {
+            System.out.println(s);
+        }
+
+        assertEquals(5, q.Size());
+    }
+
+
     @Test
     public void test_queue() {
         Queue<String> q = new Queue<>();

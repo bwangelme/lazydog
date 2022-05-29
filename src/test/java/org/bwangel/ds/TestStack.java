@@ -53,4 +53,21 @@ public class TestStack {
 
         fail("I should get EmptyStackException");
     }
+
+    @Test
+    public void test_stack_iter() {
+        Stack<String> s = new Stack<>();
+
+        s.Push("to");
+        s.Push("be");
+        s.Push("or");
+        s.Push("not");
+        s.Push("to");
+
+        // 期待的输出
+        // to not or be to
+        for (String item : s) {
+            System.out.println(item);
+        }
+    }
 }

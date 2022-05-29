@@ -1,6 +1,10 @@
 package org.bwangel.ds;
 
-public class Queue<Item> {
+import jdk.jshell.spi.ExecutionControl;
+
+import java.util.Iterator;
+
+public class Queue<Item> implements Iterable<Item> {
     private class Node {
         Item item = null;
         Node next = null;
@@ -47,5 +51,32 @@ public class Queue<Item> {
         }
 
         return ret;
+    }
+
+    private class QueueIterator implements Iterator<Item> {
+        private Node node = first;
+
+        public boolean hasNext() {
+            return node != null;
+        }
+
+        public Item next() {
+            if (node == null) {
+                return null;
+            }
+
+            Item ret = node.item;
+            node = node.next;
+
+            return ret;
+        }
+
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
+    }
+
+    public Iterator<Item> iterator() {
+        return new QueueIterator();
     }
 }

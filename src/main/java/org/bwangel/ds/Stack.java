@@ -1,9 +1,12 @@
 package org.bwangel.ds;
 
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
+
 /**
  * 用链表实现的栈
  */
-public class Stack<Item> {
+public class Stack<Item> implements Iterable<Item> {
     private class Node {
         Item item = null;
         Node next = null;
@@ -11,6 +14,8 @@ public class Stack<Item> {
 
     private int N;
     private Node first;
+    // 进行 push / pop 操作的次数
+    private int opCount;
 
     public boolean IsEmpty() {
         return first == null;
@@ -27,6 +32,43 @@ public class Stack<Item> {
         first.item = item;
         first.next = oldFirst;
         N++;
+        opCount++;
+    }
+
+    private class StackIterator implements Iterator<Item> {
+        private Node current = first;
+        private int opCnt = opCount;
+
+        public boolean hasNext() {
+            if (opCnt != opCount) {
+                throw new ConcurrentModificationException();
+            }
+            return current != null;
+        }
+
+        public Item next() {
+            if (opCnt != opCount) {
+                throw new ConcurrentModificationException();
+            }
+
+            if (current == null) {
+                return null;
+            }
+
+            Item ret = current.item;
+            current = current.next;
+
+            return ret;
+
+        }
+
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
+    }
+
+    public Iterator<Item> iterator() {
+        return new StackIterator();
     }
 
     public Item Pop() {
@@ -42,6 +84,7 @@ public class Stack<Item> {
 
 
         N--;
+        opCount++;
         return val;
     }
 
