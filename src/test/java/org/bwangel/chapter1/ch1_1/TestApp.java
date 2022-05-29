@@ -1,4 +1,4 @@
-package org.bwangel.ch1_1;
+package org.bwangel.chapter1.ch1_1;
 
 import org.junit.Test;
 
@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 /**
  * Unit test for simple App.
  */
-public class AppTest {
+public class TestApp {
     /**
      * Rigorous Test :-)
      */

@@ -1,4 +1,4 @@
-package org.bwangel.ch1_1;
+package org.bwangel.chapter1.ch1_1;
 
 public class App {
     public static void main(String[] args) {

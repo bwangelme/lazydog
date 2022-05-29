@@ -1,4 +1,4 @@
-package org.bwangel.ch1_3;
+package org.bwangel.chapter1.ch1_3;
 
 import edu.princeton.cs.algs4.Stack;
 

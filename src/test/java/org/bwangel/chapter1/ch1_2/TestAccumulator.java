@@ -1,5 +1,6 @@
-package org.bwangel.ch1_2;
+package org.bwangel.chapter1.ch1_2;
 
+import org.bwangel.chapter1.ch1_2.Accumulator;
 import org.junit.Test;
 
 import java.util.Arrays;

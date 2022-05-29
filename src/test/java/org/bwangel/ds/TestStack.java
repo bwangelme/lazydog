@@ -15,27 +15,42 @@ public class TestStack {
         s.Push("not");
         s.Push("to");
 
-        String val = s.pop();
+        String val = s.Pop();
         assertEquals(val, "to");
 
         s.Push("be");
 
-        val = s.pop();
+        val = s.Pop();
         assertEquals(val, "be");
 
-        val = s.pop();
+        val = s.Pop();
         assertEquals(val, "not");
 
         s.Push("that");
 
-        val = s.pop();
+        val = s.Pop();
         assertEquals(val, "that");
-        val = s.pop();
+        val = s.Pop();
         assertEquals(val, "or");
-        val = s.pop();
+        val = s.Pop();
         assertEquals(val, "be");
 
         s.Push("is");
         assertEquals(2, s.Size());
+    }
+
+    @Test
+    public void test_empty_stack_exception() {
+        Stack<String> s = new Stack<>();
+
+        assertTrue(s.IsEmpty());
+
+        try {
+            s.Pop();
+        } catch (EmptyStackException e) {
+            return;
+        }
+
+        fail("I should get EmptyStackException");
     }
 }

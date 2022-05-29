@@ -1,4 +1,4 @@
-package org.bwangel.ch1_2;
+package org.bwangel.chapter1.ch1_2;
 
 /**
  * 本程序是一个计算方差和样本标准差的工具

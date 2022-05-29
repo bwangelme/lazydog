@@ -1,7 +1,5 @@
 package org.bwangel.ds;
 
-import java.util.EmptyStackException;
-
 /**
  * 用链表实现的栈
  */
@@ -31,7 +29,7 @@ public class Stack<Item> {
         N++;
     }
 
-    public Item pop() {
+    public Item Pop() {
         if (this.IsEmpty()) {
             throw new EmptyStackException();
         }

@@ -1,4 +1,4 @@
-package org.bwangel.ch1_1;
+package org.bwangel.chapter1.ch1_1;
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdIn;

@@ -1,4 +1,4 @@
-package org.bwangel.ch1_3;
+package org.bwangel.chapter1.ch1_3;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
