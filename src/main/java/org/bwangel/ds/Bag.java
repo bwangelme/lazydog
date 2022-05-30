@@ -2,6 +2,10 @@ package org.bwangel.ds;
 
 import java.util.Iterator;
 
+/**
+ * 背包数据结构
+ * @param <Item>
+ */
 public class Bag<Item> implements Iterable<Item> {
     private class Node {
         Item item = null;
