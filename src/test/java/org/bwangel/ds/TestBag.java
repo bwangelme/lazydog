@@ -14,6 +14,7 @@ public class TestBag {
         bag.Add("河");
         bag.Add("长");
 
+        assertEquals(bag.Size(), 5);
         for(String s : bag) {
             System.out.println(s);
             if(s.equals("圆")) {
